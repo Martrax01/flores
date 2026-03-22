@@ -6,34 +6,57 @@ body, html {
     background-color: #000;
     color: white;
     font-family: 'Arial', sans-serif;
-    overflow: hidden; /* Evita que salgan barras de scroll */
+    overflow: hidden;
 }
 
-/* El contenedor principal debe ser 3D */
+#pantalla-inicio {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+.girasol-loader {
+    font-size: 100px;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 0 15px yellow);
+}
+
+button {
+    background: transparent;
+    border: 2px solid #ffeb3b;
+    color: #ffeb3b;
+    padding: 15px 30px;
+    font-size: 1.5rem;
+    border-radius: 50px;
+    cursor: pointer;
+    text-shadow: 0 0 10px yellow;
+    box-shadow: 0 0 15px rgba(255, 235, 59, 0.4);
+}
+
+.oculto { display: none !important; }
+
 #universo {
     position: relative;
     width: 100vw;
     height: 100vh;
-    perspective: 1200px; /* Crucial para el efecto de profundidad */
-    overflow: hidden;
+    perspective: 1000px;
 }
 
 .elemento-flotante {
     position: absolute;
-    transition: transform 0.2s ease-out;
-    text-shadow: 0 0 10px rgba(255, 235, 59, 0.7);
     white-space: nowrap;
-    opacity: 0.9;
-    pointer-events: none; /* Para que no interfieran con clics */
+    text-shadow: 0 0 10px yellow;
 }
 
 .titulo-galaxia {
-    text-align: center;
     position: absolute;
+    top: 5%;
     width: 100%;
-    top: 10%;
-    z-index: 100;
-    font-size: 1.5rem;
+    text-align: center;
     color: #ffeb3b;
-    text-shadow: 0 0 15px orange;
+    font-size: 1.2rem;
+    z-index: 10;
 }
